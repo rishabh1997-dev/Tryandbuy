@@ -21,7 +21,12 @@ const UploadSuccess = ({navigation}:{navigation:any}) => {
       toValue: 1,
       duration: 2000,
       useNativeDriver: false,
-    }).start();
+    }).start(() => {
+      // Navigate to LandingScreen after animation completes
+      setTimeout(() => {
+        navigation.navigate('LandingScreen');
+      }, 500);
+    });
   }, []);
 
   const handleClose = () => {
